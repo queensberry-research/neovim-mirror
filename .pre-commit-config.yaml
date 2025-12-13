@@ -41,11 +41,19 @@ repos:
       - id: check-submodules-updated
         args: [--run-every=PT5M]
       - id: check-version-bumped
+      - id: format-requirements
       - id: replace-sequence-str
+      - id: mirror-files-if-exist
+        args:
+          [
+            submodules/common/git/.gitignore,
+            .gitignore,
+            submodules/common/gitea/workflows/push-tag.yaml,
+            .gitea/workflows/push-tag.yaml,
+            --run-every=PT5M,
+          ]
       - id: run-bump-my-version
         args: [--mode=bumpversion]
-      - id: tag-commits
-        args: [--run-every=PT5M, --max-age=P1W, --mode=bumpversion]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
