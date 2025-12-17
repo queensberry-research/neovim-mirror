@@ -36,7 +36,7 @@ repos:
       - id: shellcheck
   # fixers/linters
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.13.25
+    rev: 0.13.26
     hooks:
       - id: check-submodules-updated
         args: [--run-every=PT5M]
