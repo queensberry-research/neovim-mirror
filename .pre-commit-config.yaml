@@ -11,10 +11,12 @@ repos:
           - --repo-name=neovim
         id: conformalize
   - repo: https://gitea.main:3000/qrt-public/conformalize
-    rev: 0.1.27
+    rev: 0.1.30
     hooks:
       - args:
           - --gitea-host=gitea.main
+          - --gitea--pull-request--pre-commit
+          - --gitea--pull-request--pre-commit--submodules=true
           - --gitea--push--tag
         id: conformalize
   - repo: https://github.com/pre-commit/pre-commit-hooks
