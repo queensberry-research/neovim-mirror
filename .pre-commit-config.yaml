@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/dycw/actions
-    rev: 0.10.3
+    rev: 0.10.4
     hooks:
       - id: conformalize-repo
         args:
@@ -10,7 +10,7 @@ repos:
           - --pre-commit--taplo
           - --readme
           - --repo-name=neovim
-  - repo: https://gitea.main:3000/qrt-public/conformalize
+  - repo: https://github.com/queensberry-research/conformalize
     rev: 0.2.3
     hooks:
       - args:
