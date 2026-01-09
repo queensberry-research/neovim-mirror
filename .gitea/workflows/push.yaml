@@ -9,10 +9,5 @@ jobs:
     steps:
       - name: Update CA certificates (tag)
         run: sudo update-ca-certificates
-      - name: Tag latest commit
-        uses: dycw/action-tag@latest
-        with:
-          token-checkout: ${{github.token}}
-          token-uv: ${{secrets.ACTION_TOKEN}}
-          user-name: github-actions-bot
-          user-email: noreply@github.com
+      - name: Tag the latest commit
+        uses: dycw/action-tag-commit@latest

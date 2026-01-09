@@ -1,23 +1,24 @@
 repos:
-  - repo: https://github.com/dycw/conformalize
-    rev: 0.13.6
+  - repo: https://github.com/dycw/actions
+    rev: 0.10.3
     hooks:
-      - args:
+      - id: conformalize-repo
+        args:
           - --description=Neovim config
           - --gitignore
           - --pre-commit--prettier
           - --pre-commit--taplo
           - --readme
           - --repo-name=neovim
-        id: conformalize
   - repo: https://gitea.main:3000/qrt-public/conformalize
-    rev: 0.1.30
+    rev: 0.2.3
     hooks:
       - args:
+          - --ci--pull-request--pre-commit
+          - --ci--pull-request--pre-commit--submodules=true
+          - --ci--push--tag
           - --gitea-host=gitea.main
-          - --gitea--pull-request--pre-commit
-          - --gitea--pull-request--pre-commit--submodules=true
-          - --gitea--push--tag
+          - --repo-name=neovim
         id: conformalize
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
