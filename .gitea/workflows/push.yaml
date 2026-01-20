@@ -1,5 +1,5 @@
 name: push
-on:
+"on":
   push:
     branches:
       - master
@@ -7,7 +7,7 @@ jobs:
   tag:
     runs-on: ubuntu-latest
     steps:
-      - name: Update CA certificates (tag)
+      - name: Update CA certificates
         run: sudo update-ca-certificates
       - name: Tag the latest commit
         uses: dycw/action-tag-commit@latest
